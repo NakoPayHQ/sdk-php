@@ -1,0 +1,48 @@
+{
+  "name": "nakopay/sdk",
+  "description": "Official NakoPay SDK for PHP. Accept Bitcoin, Lightning, Litecoin, Monero and more with a Stripe-style API.",
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://nakopay.com",
+  "keywords": ["nakopay", "bitcoin", "lightning", "crypto", "payments", "btcpay", "monero", "invoices", "laravel"],
+  "authors": [
+    { "name": "NakoPay", "email": "support@nakopay.com", "homepage": "https://nakopay.com" }
+  ],
+  "support": {
+    "issues": "https://github.com/NakoPayHQ/sdk-php/issues",
+    "source": "https://github.com/NakoPayHQ/sdk-php",
+    "docs": "https://nakopay.com/docs/sdk/php"
+  },
+  "require": {
+    "php": "^8.1",
+    "ext-json": "*",
+    "ext-hash": "*",
+    "guzzlehttp/guzzle": "^7.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0",
+    "phpstan/phpstan": "^1.10"
+  },
+  "autoload": {
+    "psr-4": {
+      "NakoPay\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "NakoPay\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "lint": "phpstan analyse src --level=6"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "NakoPay\\Laravel\\NakoPayServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "stable"
+}
